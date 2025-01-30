@@ -1,0 +1,187 @@
+# Setting Up a React Project  
+
+1. **Create a Folder**  
+   - Make a new folder named `react` on the desktop.  
+
+2. **Open Command Prompt in the Folder**  
+   - Double-click to enter the folder.  
+   - Click on the address bar at the top, erase the text, type `cmd`, and press Enter. This will launch the command prompt in that location.  
+
+3. **Check Installed Versions**  
+   - Verify Node.js version: `node -v`  
+   - Check npm version: `npm -v`  
+
+4. **Create a React Application**  
+   - Run the command: `npx create-react-app demo`  
+   - Start the development server: `npm start`  
+
+5. **Verify Project Structure**  
+   - Open the `react` folder and confirm that the `demo` folder has been created.  
+   - Inside the `demo` folder, check for these files:  
+     1. `index.html`  
+     2. `index.js`  
+     3. `index.css`  
+   - Start coding in `App.js`, as it serves as the main component.  
+
+6. **Understanding React DOM**  
+   - Unlike traditional HTML, React updates only the changed elements instead of reloading the entire DOM.  
+   - React applications are composed of **components** that break down UI elements into reusable sections.  
+
+---
+
+# React Components  
+
+There are two types of components:  
+1. **Functional Components**  
+2. **Class Components**  
+
+### JSX (JavaScript XML)  
+JSX allows writing HTML-like syntax inside JavaScript, making UI creation easier.  
+
+---
+
+# Day 4: Props & State  
+
+1. **Props (Properties)**  
+   - Immutable data passed to components. Example:  
+     - Product name  
+     - Brand of a water bottle  
+
+2. **State**  
+   - Mutable data within a component. Example:  
+     - The water level in a bottle (full, half, empty)  
+
+### Example (Flipkart Product Component)  
+- **Component:** `Mobiles`  
+- **Props:** Name, version, price  
+
+---
+
+# Hooks: Managing State in Functional Components  
+
+Initially, state management was available only in **class components**. With the introduction of **hooks**, functional components can now also manage state.  
+
+Commonly used hooks:  
+1. `useState` – Manages local component state.  
+2. `useEffect` – Handles side effects in components.  
+3. `useRef` – Manages references to DOM elements.  
+4. `useContext` – Enables sharing state between components.  
+5. `useReducer` – An alternative to `useState` for complex state management.  
+
+### Example: Counter using `useState`  
+- Set an initial count (e.g., 0).  
+- Implement increment, decrement, and reset functionality.  
+
+---
+
+# Day 5: Merging Arrays  
+
+- Using the **spread operator** (`...`) in `useState` for merging arrays.  
+
+---
+
+# Day 6: `useEffect` Hook  
+
+- Used for tracking changes in a component.  
+- Accepts two arguments:  
+  1. A callback function (similar to a constructor in Java).  
+  2. A dependency array (`[]`).  
+
+---
+
+# Day 9: `useReducer` Hook  
+
+Similar to `useState`, but better for managing complex states.  
+
+### Steps to Use `useReducer`  
+1. **Define a Reducer Function** – Specifies what action (increment, decrement) needs to be performed.  
+2. **Initialize State** – Sets the default value.  
+3. **Dispatch Actions** – Triggers state updates.  
+
+### Key Differences Between `useState` and `useReducer`  
+- `useState` is ideal for simple state updates.  
+- `useReducer` is used for managing multiple states efficiently.  
+
+---
+
+# Redux: Centralized State Management  
+
+**Redux** is a library that helps manage global state in large applications.  
+
+### Key Concepts  
+- **State**: The data that Redux manages.  
+- **Reducer**: A function that updates state based on actions.  
+- **Dispatch**: The function used to trigger state updates.  
+
+---
+
+# Day 10: React Router  
+
+Used for navigation within a React application.  
+
+### Steps to Set Up Routing  
+1. Install `react-router-dom`.  
+2. Define routes: Home, Users, About, Contact.  
+3. Use the `useSelector` hook to access Redux store data.  
+
+---
+
+# Day 11: MongoDB and Compass  
+
+- **MongoDB Compass**: A GUI tool for managing MongoDB databases.  
+- **Create a Collection (`computers`) with Fields:**  
+  - `modelName`, `brandName`, `releaseYear`, `warranty`, `price`  
+- **Filter Queries:**  
+  - Find products priced between `30,000` and `50,000`.  
+  - Retrieve only `Asus` brand products.  
+
+---
+
+# Node.js & Express.js  
+
+- **Node.js** is a runtime environment that allows JavaScript to run on the backend.  
+- **Express.js** is a framework for building web servers.  
+
+### Basic Express Server  
+```js
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+### Running the Server  
+1. Start the server: `node server.js`  
+2. Start the client: `npm start`  
+
+---
+
+# Axios: Handling API Requests  
+
+- **Axios** is a library for making HTTP requests.  
+- Used in both **browser** and **Node.js** applications.  
+
+### Installing Axios & CORS  
+```sh
+npm i axios  
+npm i cors  
+```
+
+### CORS (Cross-Origin Resource Sharing)  
+- Defines rules for allowing requests from different origins.  
+
+---
+
+# Next Task  
+
+1. **Create User Management System**  
+   - **Files:** `User.js`, `Update.js`  
+   - **Fields:** Name, age, email  
+   - **Button:** "Add User" (stores data in MongoDB)  
+
